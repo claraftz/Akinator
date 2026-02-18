@@ -36,8 +36,8 @@ if(isset($_POST['next'])) {
 
 
 //3.
-if (isset($_POST['id'])) {
-    $questionId = (int)$_POST['id'];
+if (isset($_GET['id'])) {
+    $questionId = (int)$_GET['id'];
 } else {
     $questionId = 1;
 }
@@ -62,7 +62,7 @@ $answers = $typeAnswer->fetchAll();
 $answerYes = null;
 $answerNo = null; 
 
-foreach($answers as $answser) {
+foreach($answers as $answer) {
     if ($answer['type_answer'] === 'OUI') {
         $answerYes = $answer;
     } elseif ($answer['type_answer'] === 'NON') {
