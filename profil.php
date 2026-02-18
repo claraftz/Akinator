@@ -4,8 +4,8 @@ require_once 'connectToDb.php';
 
 /**
  * 1. Verif user connecté 
- * 2. **/
-// 1. Protection accès
+ * 2. Message verif erreur . succes**/
+// 1.
 if(!isset($_SESSION['user']['id'])){
     header('Location: connection.php');
     exit;
@@ -14,7 +14,7 @@ if(!isset($_SESSION['user']['id'])){
 $db = connectToDb();
 $idPlayer = (int)$_SESSION['user']['id'];
 
-// 2. Messages flash (succès/erreur)
+// 2.
 $success = $_SESSION['success'] ?? null;
 $error = $_SESSION['error'] ?? null;
 unset($_SESSION['success'], $_SESSION['error']);
@@ -29,7 +29,7 @@ try {
     ');
     $query->execute([$idPlayer]);
     
-    // IMPORTANT : Bien utiliser $gamesLogs avec un L majuscule
+    
     $gamesLogs = $query->fetchAll(PDO::FETCH_ASSOC);
     
 } catch (Exception $e) {
