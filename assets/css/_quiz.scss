@@ -1,0 +1,88 @@
+.container-quiz {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFEFD5;
+    
+    
+    
+    
+    .card-quiz {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(251, 247, 250, 0.5);
+        padding: 40px 60px;
+        border-radius: 15px;
+        width: 500px;
+        
+        
+        h2{
+            text-align: center;
+        }
+        
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 15px;
+            
+            
+            .type-answer {
+                width: 100%;
+                
+                input[type="radio"] {
+                    display: none;
+                }
+                
+                label {
+                    display: block;
+                    width: 100%;
+                    padding: 12px;
+                    margin-bottom: 10px;
+                    text-align: center;
+                    cursor: pointer;
+                    font-weight: bold;
+                    background-color: white
+                }
+                
+                label:hover{
+                    background-color: rgba(64, 108, 74, 0.1);
+                }
+                
+                input[type="radio"]:checked + label {
+                    background-color: #406C4A;
+                    color: white;
+                }
+            }
+            
+            
+            .btn-confirm {
+                margin-top: 20px;
+                padding: 9px 30px;
+                border-radius: 25px;
+                border: none;
+                color: white;
+                background-color: #406C4A;
+                cursor: pointer;
+            }
+            
+            .btn-confirm:hover {
+                transform: scale(1.05);
+                background-color: rgba(64, 108, 74, 0.5);
+            }
+            
+        }
+        
+        .quiz-restart{
+                margin-top: 20px;
+                font-style: italic;
+                text-decoration: none;
+                color: black;
+            }
+    }
+}
+ 
