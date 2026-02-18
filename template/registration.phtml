@@ -1,0 +1,34 @@
+<main class="container-register">
+    
+    <h1>Inscription</h1>
+    
+    
+    <?php if($error): ?>
+        <p style="color: red; font-weight: bold;"><?= htmlspecialchars($error) ?></p>
+    <?php endif; ?>
+    
+    
+    <form action="registration.php" method="POST">
+        <labeL>Nom d'utilisateur
+        <div>
+            <input type="text" name="nickname" required />
+        </div>
+        </labeL>
+        
+        <labeL>Email
+        <div>
+            <input type="text" name="email" required />
+        </div>
+        </labeL>
+        
+        <labeL>Mot de passe 
+        <div>
+            <input type="password" name="password" required />
+        </div>
+        </labeL>
+        
+        <p>Votre mot de passe doit contenir entre 8 et 16 lettres, avec au moins une majuscule, une minuscule, 1 chiffre et 1 caractère spécial.</p>
+        
+        <input type="submit" value="S'inscrire"/>
+    </form>
+</main>
