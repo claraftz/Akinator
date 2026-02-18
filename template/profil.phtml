@@ -1,4 +1,17 @@
 <main class="container-profil">
+    <?php if($success): ?>
+        <div class="alert-success-mess">
+            Nouveau <?= htmlspecialchars($success) ?> !
+        </div>
+    <?php endif; ?>
+    
+        
+    <?php if ($error): ?>
+        <div class="alert error-message">
+            Alerte !  <?= htmlspecialchars($error) ?>
+        </div>
+    <?php endif; ?>    
+        
     <h1>Centre de commandement de <?= htmlspecialchars($_SESSION['user']['nickname']) ?> </h1>
     
     
@@ -12,8 +25,15 @@
             <?php else: ?>
                 <?php foreach ($gamesLogs as $game): ?>
                 <div class='history-item'>
-                    <span class="date">Cycle du <?= date('d/m/Y', strtotime($game['date_game'])) ?></span>
-                    <span class="name-character">Cible identifiée : <?= htmlspecialchars($game['name_character']) ?></span>
+                    <div class="history-thumbnail">
+                        <img src="assets/image/<?= htmlspecialchars($game['picture']) ?>" alt="<?= htmlspecialchars($game['name_character']) ?>">
+                    </div>
+                    
+                    <div class="history-info">
+                        <span class="date">Cycle du <?= date('d/m/Y', strtotime($game['date_game'])) ?></span>
+                        <span class="name-character">Cible identifiée : <?= htmlspecialchars($game['name_character']) ?></span>
+                    </div>
+                    
                 </div>
             
                 <?php endforeach; ?>
@@ -27,7 +47,7 @@
         <h2>Crypter un nouveau mot de passe</h2>
         <p>Votre mot de passe doit contenir entre 8 et 16 lettres, avec au moins une majuscule, une minuscule, 1 chiffre et 1 caractère spécial </p>
         
-        <form action="#" method="POST">
+        <form action="resetPassword.php" method="POST">
             <div>
                 <label>Mot de passe actuel</label>
                 <input type="password" name="oldPassword" required/>
@@ -35,7 +55,7 @@
             
             <div>
                 <label>Nouveau mot de passe</label>
-                <input type="password" name="newPassword" required/>
+                <input type="password" name="new_password" required/>
             </div>
             
             <button type="submit" class="btn-submit">Mettre à jour les systèmes</button>
@@ -48,7 +68,7 @@
         <h2>Zone de désintégration</h2>
         <p class='warning'>Attention : cette action effacera DEFINITIVEMENT votre existence des Archives Jedi !</p>
         
-        <form action="#" method="POST"
+        <form action="deleteProfil.php" method="POST"
             onsubmit="return confirm('Voulez vous vraiment passer du coté obscur et supprimer votre compte ?');">
             <button type="submit" class="btn-delete">Supprimer mon existence</button>
         </form>
