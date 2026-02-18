@@ -1,0 +1,111 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #406C4A;
+  margin: 0;
+  padding: 15px 20px;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+header nav div a {
+  text-decoration: none;
+  margin: 5px;
+  color: white;
+}
+
+footer {
+  background-color: #406C4A;
+  margin: 0;
+  padding: 10px 20px;
+}
+footer p {
+  color: white;
+  text-align: center;
+}
+
+.container-home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #FFEFD5;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.container-home img {
+  max-height: 250px;
+  width: auto;
+  margin-bottom: 20px;
+}
+.container-home a {
+  background-color: #406C4A;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.container-register {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFEFD5;
+}
+.container-register form {
+  display: flex;
+  background-color: rgba(251, 247, 250, 0.5);
+  padding: 20px 60px;
+  border-radius: 15px;
+  width: 420px;
+  flex-direction: column;
+  align-items: center;
+}
+.container-register form label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.container-register form label input[type=text] {
+  padding: 5px;
+  width: 100%;
+}
+.container-register form p {
+  text-align: center;
+  font-style: italic;
+}
+.container-register form input[type=submit] {
+  padding: 9px 20px;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  background-color: #406C4A;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+  align-self: center;
+}
+.container-register form input[type=submit]:hover {
+  transform: scale(1.05);
+  background-color: rgba(64, 108, 74, 0.5);
+}
+
+/*# sourceMappingURL=style.css.map */
