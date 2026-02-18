@@ -1,14 +1,24 @@
 <?php
+declare(strict_types=1);
 session_start();
 require_once 'connectToDb.php';
 
-// 1. Verif connexion
+/**
+ * 1. Verif connexion user
+ * 2. Recupération l'ID du perso final 
+ *  3. Enregistrement sécurisé (verif character existe en Sql)
+ * 4. Recupérer les données pour affichage 
+**/
+
+//1
 if(!isset($_SESSION['user']['id'])){
     header('Location: connection.php');
     exit;
 }
 
-// 2. Recup ID character
+
+
+// 2.
 if(!isset($_GET['id_character'])){
     header('Location: quiz.php');
     exit;
@@ -18,9 +28,10 @@ $characterId = (int)$_GET['id_character'];
 $userId = (int)$_SESSION['user']['id'];
 $db = connectToDb();
 
-// 3. Enregistrement sécurisé
+
+
+// 3. 
 try {
-    // On vérifie si le perso existe vraiment dans la table Character
     $check = $db->prepare('SELECT id FROM `Character` WHERE id = ?');
     $check->execute([$characterId]);
     
@@ -32,11 +43,12 @@ try {
         $insert->execute([$userId, $characterId]);
     }
 } catch (Exception $e) {
-    // Si ça plante, on veut voir l'erreur !
     die("Erreur historique : " . $e->getMessage());
 }
 
-// 4. Recup données pour l'affichage
+
+
+// 4. 
 $request = $db->prepare('SELECT name_character, description, picture FROM `Character` WHERE id = ?');
 $request->execute([$characterId]);
 $character = $request->fetch();
