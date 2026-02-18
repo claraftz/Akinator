@@ -1,0 +1,42 @@
+<main class="container-quiz">
+    <h1>QUIZ</h1>
+    
+    
+    <section class="card-quiz">
+        <h2><?= htmlspecialchars($currentQuestion['text_question']) ?></h2>
+        
+        <form action="quiz.php" method="POST">
+            <div>
+                <div class="type-answer">
+                    <?php 
+                        if($answerNo['id_next_question'] !== null) {
+                            $valueNo = $answerNo['id_next_question'];
+                        } else {
+                            $valueNo = 'res_' . $answerNo['id_character'];
+                        }
+                    ?>
+                    <input type="radio" name="next" id="no" value="<?= $valueNo ?>" required/>
+                    <label for="no">Non</label>
+                </div>
+                
+                
+                <div class="type-answer">
+                    <?php 
+                        if($answerYes['id_next_question'] !== null) {
+                            $valueYes = $answerYes['id_next_question'];
+                        } else {
+                            $valueYes = 'res_' . $answerYes['id_character'];
+                        }
+                    ?>
+                    <input type="radio" name="next" id="yes" value="<?= $valueYes ?>" required/>
+                    <label for="yes">Oui</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn-confirm">Valider</button>
+        </form>
+        
+        
+        <a href="quiz.php" class="quiz-restart">Recommencer le quiz</a>
+    </section>
+</main>
