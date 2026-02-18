@@ -1,5 +1,10 @@
 <main class="container-home">
     <img src="assets/image/akinator_yoda.png" alt="Image de Akinator version Yoda"></img>
-    <h1>Akinator</h1>
-    <a href="connection.php">Connectez-vous</a>
+    <h1>rotanikA</h1> 
+    
+    <?php if(isset($_SESSION['user'])) : ?>
+        <a href="quiz.php">Jouer</a>
+    <?php else: ?>
+        <a href="connection.php">Connectez-vous</a>
+    <?php endif; ?>
 </main>
