@@ -1,0 +1,23 @@
+<main class="container-result">
+    <h1>Résultat</h1>
+    
+    
+    <section class="card-result">
+        <p class="prediction-result">La force me murmure un nom ...  <strong><?= htmlspecialchars($character['name_character']) ?></strong>
+        </p>
+        
+        <div class="img-result">
+            <img src="./assets/image/<?= htmlspecialchars($character['picture']) ?>"></img>
+        </div>
+        
+        <p class="description-result">
+            <?= nl2br(htmlspecialchars($character['description'])) ?>
+        </p>
+        
+        <div class="next-action">
+            <a href="quiz.php" class="btn-restart">Rejouer</a>
+            <a href="index.php" class="btn-stop">Retour au vaisseau</a>
+        </div>
+        
+    </section>
+</main>
