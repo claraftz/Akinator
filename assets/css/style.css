@@ -87,6 +87,10 @@ footer p {
   padding: 5px;
   width: 100%;
 }
+.container-register form label input[type=password] {
+  padding: 5px;
+  width: 100%;
+}
 .container-register form p {
   text-align: center;
   font-style: italic;
@@ -106,6 +110,278 @@ footer p {
 .container-register form input[type=submit]:hover {
   transform: scale(1.05);
   background-color: rgba(64, 108, 74, 0.5);
+}
+
+.container-register {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFEFD5;
+}
+.container-register form {
+  display: flex;
+  background-color: rgba(251, 247, 250, 0.5);
+  padding: 20px 60px;
+  border-radius: 15px;
+  width: 420px;
+  flex-direction: column;
+  align-items: center;
+}
+.container-register form label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.container-register form label input[type=text] {
+  padding: 5px;
+  width: 100%;
+}
+.container-register form label input[type=password] {
+  padding: 5px;
+  width: 100%;
+}
+.container-register form p {
+  text-align: center;
+  font-style: italic;
+}
+.container-register form input[type=submit] {
+  padding: 9px 20px;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  background-color: #406C4A;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+  align-self: center;
+}
+.container-register form input[type=submit]:hover {
+  transform: scale(1.05);
+  background-color: rgba(64, 108, 74, 0.5);
+}
+
+.container-profil {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFEFD5;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.container-profil h1 {
+  color: black;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.container-profil .profil-section {
+  background-color: white;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 15px;
+  text-align: center;
+}
+.container-profil .profil-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.container-profil .history-list {
+  max-height: 120px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+.container-profil .history-list .history-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+.container-profil .history-list .history-item .history-thumbnail {
+  width: 35px;
+  height: 35px;
+}
+.container-profil .history-list .history-item .history-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.container-profil .history-list .history-item .history-info .date {
+  font-size: 0.75rem;
+  color: #888;
+  display: block;
+}
+.container-profil .history-list .history-item .history-info .name-character {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.container-profil form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.container-profil form div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.container-profil form div input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.container-profil form button {
+  background-color: #406C4A;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.container-profil form button.btn-delete {
+  background-color: #d32f2f;
+}
+
+.container-quiz {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFEFD5;
+}
+.container-quiz .card-quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(251, 247, 250, 0.5);
+  padding: 40px 60px;
+  border-radius: 15px;
+  width: 500px;
+}
+.container-quiz .card-quiz h2 {
+  text-align: center;
+}
+.container-quiz .card-quiz form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+.container-quiz .card-quiz form .type-answer {
+  width: 100%;
+}
+.container-quiz .card-quiz form .type-answer input[type=radio] {
+  display: none;
+}
+.container-quiz .card-quiz form .type-answer label {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: white;
+}
+.container-quiz .card-quiz form .type-answer label:hover {
+  background-color: rgba(64, 108, 74, 0.1);
+}
+.container-quiz .card-quiz form .type-answer input[type=radio]:checked + label {
+  background-color: #406C4A;
+  color: white;
+}
+.container-quiz .card-quiz form .btn-confirm {
+  margin-top: 20px;
+  padding: 9px 30px;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  background-color: #406C4A;
+  cursor: pointer;
+}
+.container-quiz .card-quiz form .btn-confirm:hover {
+  transform: scale(1.05);
+  background-color: rgba(64, 108, 74, 0.5);
+}
+.container-quiz .card-quiz .quiz-restart {
+  margin-top: 20px;
+  font-style: italic;
+  text-decoration: none;
+  color: black;
+}
+
+.container-result {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFEFD5;
+}
+.container-result .card-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(251, 247, 250, 0.5);
+  padding: 10px 60px;
+  border-radius: 15px;
+}
+.container-result .card-result .prediction-result {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+.container-result .card-result .img-result {
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  border-radius: 600px;
+}
+.container-result .card-result .img-result img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.container-result .card-result .description-result {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+.container-result .card-result .next-action {
+  display: flex;
+  gap: 20px;
+}
+.container-result .card-result .next-action .btn-restart,
+.container-result .card-result .next-action .btn-stop {
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+.container-result .card-result .next-action .btn-restart {
+  background-color: #406C4A;
+}
+.container-result .card-result .next-action .btn-stop {
+  background-color: #f0f0f0;
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

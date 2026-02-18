@@ -1,5 +1,5 @@
 <?php 
-
+declare(strict_types=1);
 session_start(); 
 require_once 'connectToDb.php';
 
@@ -58,4 +58,3 @@ $title = 'Akinator - Connexion';
 $template = 'template/connection.phtml';
 include 'template/layout.phtml';
 
-?>
