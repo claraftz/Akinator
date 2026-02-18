@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-content">
+    <title><?= $title ?></title>
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <a href="index.php">Accueil</a>
+            </div>
+            
+            <div>
+                <?php if(isset($_SESSION['user'])): ?>
+                    <span>Que la Force soit avec toi, <?= htmlspecialchars($_SESSION['user']['nickname']) ?> !</span>
+                    <a href="profil.php">Mon compte</a>
+                    <a href="logout.php">Deconnexion</a>
+                <?php else: ?>
+                    <a href="connection.php">Se connecter</a>
+                    <a href="registration.php">S'inscrire</a>
+                <?php endif; ?>
+            </div>
+        </nav>
+    </header>
+    
+    
+    <?php include $template ?>
+    
+    
+    <footer>
+        <p>© 2026 3W Academy - All rights reserved</p>
+    </footer>
+</body>
+</html>
