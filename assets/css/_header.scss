@@ -1,0 +1,19 @@
+header {
+    background-color: #406C4A;
+    margin: 0;
+    padding: 15px 20px;
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        
+        div {
+            
+            a {
+                text-decoration: none;
+                margin: 5px;
+                color: white;
+            }
+        }
+    }
+}
