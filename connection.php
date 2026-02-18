@@ -44,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         
         //6. 
-        header('Location: profil.php');
+        header('Location: index.php');
         exit;
     } catch (Exception $e) {
         $error = $e->getMessage();
